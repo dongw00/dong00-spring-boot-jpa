@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -44,4 +45,11 @@ public class Item {
 
     @OneToMany(mappedBy = "item")
     private List<Order> orders = new ArrayList<>();
+
+    @Builder
+    public Item(String itemBrand, String itemName, String itemColor) {
+        this.itemBrand = itemBrand;
+        this.itemName = itemName;
+        this.itemColor = itemColor;
+    }
 }

@@ -1,6 +1,7 @@
 package com.dongwoo.api.user.service;
 
 import com.dongwoo.api.user.domain.User;
+import com.dongwoo.api.user.domain.UserDto;
 import com.dongwoo.api.user.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+
 
     @Override
     public List<User> findAll() {
@@ -41,5 +43,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public String signup(User user) {
+        return "";
+    }
+
+    @Override
+    public UserDto signin(User user) {
+        return null;
     }
 }
