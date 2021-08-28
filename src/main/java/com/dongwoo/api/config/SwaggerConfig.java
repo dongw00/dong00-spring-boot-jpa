@@ -40,13 +40,12 @@ public class SwaggerConfig {
     }
 
     private ApiInfo metadata() {
-        return new ApiInfoBuilder()//
-            .title("JSON Web Token Authentication API")//
-            .description(
-                "This is a sample JWT authentication service. You can find out more about JWT at [https://jwt.io/](https://jwt.io/). For this sample, you can use the `admin` or `client` users (password: admin and client respectively) to test the authorization filters. Once you have successfully logged in and obtained the token, you should click on the right top button `Authorize` and introduce it with the prefix \"Bearer \".")//
-            .version("1.0.0")//
-            .license("MIT License").licenseUrl("http://opensource.org/licenses/MIT")//
-            .contact(new Contact(null, null, "pakjkwan@gmail.com"))//
+        return new ApiInfoBuilder()
+            .title("Bithumb Project")
+            .description("빗썸 아카데미 백앤드과정")
+            .version("1.0.0")
+            .license("MIT License").licenseUrl("http://opensource.org/licenses/MIT")
+            .contact(new Contact("dongw00", null, "ptdw0428@naver.com"))
             .build();
     }
 
@@ -69,5 +68,4 @@ public class SwaggerConfig {
         return Collections.singletonList(
             new SecurityReference("Authorization", authorizationScopes));
     }
-
 }

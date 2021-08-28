@@ -1,9 +1,12 @@
+server:
+  port: 8080
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/mariadb
-    username: mariadb
-    password: mariadb
+    url: jdbc:mariadb://localhost:3306/mariadb?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: ms159753
 
   jpa:
     hibernate:
@@ -12,5 +15,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MariaDBDialect
 
-server:
-  port: 8080
+security:
+  jwt:
+    token:
+      security-key: secret-key
+      expiration-length: 3600000
+
+UserController:
+  signup: Creates user and returns its JWT token
+  signin: Authenticates user and returns its JWT token
