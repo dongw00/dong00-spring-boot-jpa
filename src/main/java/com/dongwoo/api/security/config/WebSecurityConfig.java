@@ -49,9 +49,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
+
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests()
-            .antMatchers("/users/signin", "/users/singup", "/users/findAll").permitAll()
+            .antMatchers("/users/signin", "/users/signup", "/users/findAll").permitAll()
             .antMatchers("/v2/api-docs", "/swagger*/**", "/webjars/**").permitAll()
             .antMatchers("/h2-console/**/**").permitAll()
             .anyRequest().authenticated();
